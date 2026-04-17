@@ -19,7 +19,14 @@
 @use "blocks/advantage-card";
 @use "blocks/hero";
 
-/* .header,
+@use "blocks/tag";
+@use "blocks/section";
+@use "blocks/list";
+@use "blocks/tile";
+@use "blocks/card";
+
+.header,
+.hero,
 .footer {
   display: none !important;
-} */
+}
