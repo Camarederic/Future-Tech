@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: rem(60);
+  row-gap: rem(40);
 
   @include laptop {
-    row-gap: rem(50);
+    row-gap: rem(30);
   }
 
   &__author {
@@ -25,6 +25,8 @@
     padding-top: fluid(50, 30);
     color: var(--color-light);
     text-align: center;
+    max-width: rem(500);
+    margin-inline: auto;
   }
 
   &__rating-view {

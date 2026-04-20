@@ -1509,34 +1509,44 @@ button[aria-label]::before {
     --itemPaddingX: 2.5rem;
   }
 }
-.bordered-grid--3-cols .bordered-grid__item {
-  /* Выбираем элементы в 1-ой и 2-ой колонке*/
+@media (width > 63.99875rem) {
+  .bordered-grid--3-cols .bordered-grid__item {
+    /* Выбираем элементы в 1-ой и 2-ой колонке*/
+  }
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-2), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
+    padding-right: var(--itemPaddingX);
+    border-right: var(--border);
+  }
+  .bordered-grid--3-cols .bordered-grid__item {
+    /* Выбираем элементы во 2-ой колонке*/
+  }
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
+    position: relative;
+  }
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1)::before {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    content: "";
+    bottom: 0;
+    width: 100vw;
+    height: 0.0625rem;
+    background-color: var(--color-dark-15);
+  }
+  .bordered-grid--3-cols .bordered-grid__item {
+    /* Выбираем элементы во 2-ой и 3-й колонке*/
+  }
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n) {
+    padding-left: var(--itemPaddingX);
+  }
 }
-.bordered-grid--3-cols .bordered-grid__item:nth-child(3n-2), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
-  padding-right: var(--itemPaddingX);
-  border-right: var(--border);
-}
-.bordered-grid--3-cols .bordered-grid__item {
-  /* Выбираем элементы во 2-ой колонке*/
-}
-.bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
-  position: relative;
-}
-.bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1)::before {
-  position: absolute;
-  left: 50%;
-  translate: -50%;
-  content: "";
-  bottom: 0;
-  width: 100vw;
-  height: 0.0625rem;
-  background-color: var(--color-dark-15);
-}
-.bordered-grid--3-cols .bordered-grid__item {
-  /* Выбираем элементы во 2-ой и 3-й колонке*/
-}
-.bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1), .bordered-grid--3-cols .bordered-grid__item:nth-child(3n) {
-  padding-left: var(--itemPaddingX);
+@media (width <= 63.99875rem) {
+  .bordered-grid--3-cols {
+    --columns: 1;
+  }
+  .bordered-grid--3-cols .bordered-grid__item:not(:last-child) {
+    border-bottom: var(--border);
+  }
 }
 .bordered-grid__item {
   padding-block: var(--itemPaddingY);
@@ -1575,11 +1585,11 @@ button[aria-label]::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 3.75rem;
+  row-gap: 2.5rem;
 }
 @media (width <= 90.06125rem) {
   .review-card {
-    row-gap: 3.125rem;
+    row-gap: 1.875rem;
   }
 }
 .review-card__author {
@@ -1597,6 +1607,8 @@ button[aria-label]::before {
   padding-top: clamp(1.875rem, 1.556372549rem + 1.3071895425vw, 3.125rem);
   color: var(--color-light);
   text-align: center;
+  max-width: 31.25rem;
+  margin-inline: auto;
 }
 .review-card__rating-view {
   position: absolute;
