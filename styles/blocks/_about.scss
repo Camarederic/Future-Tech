@@ -14,8 +14,7 @@
     align-items: center;
     grid-template-columns: auto 1fr;
     grid-template-areas: "icon info" "icon description";
-    column-gap: fluid(80, 20);
-    row-gap: rem(30);
+    gap: rem(30) fluid(80, 20);
 
     @include laptop {
       row-gap: rem(20);
@@ -71,7 +70,6 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: rem(20);
     padding: rem(20);
     background-color: var(--color-dark);
