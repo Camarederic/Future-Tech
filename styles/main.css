@@ -1618,10 +1618,10 @@ button[aria-label]::before {
   top: 0;
 }
 
-.header,
+/* .header,
 .hero,
 .footer {
   display: none !important;
-}
+} */
 
 /*# sourceMappingURL=main.css.map */
