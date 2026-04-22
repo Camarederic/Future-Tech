@@ -79,11 +79,14 @@
     }
 
     &--3-cols {
-      grid-template-columns: repeat(3, 1fr);
       gap: fluid(50, 20) rem(20);
 
       @include laptop {
         column-gap: rem(16);
+      }
+
+      @include mobile-above {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   }
