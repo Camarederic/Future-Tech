@@ -13,6 +13,11 @@
     }
   }
 
+  &__video--small{
+    height: fluid(290, 208);
+
+  }
+
   &__panel {
     position: absolute;
     inset: 0;
