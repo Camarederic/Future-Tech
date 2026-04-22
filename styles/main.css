@@ -877,8 +877,26 @@ button[aria-label]::before {
   --columns: 4;
   text-align: center;
 }
-.metrics--4-cols .metrics__item:nth-child(4n) {
-  padding-right: 0;
+@media (width > 63.99875rem) {
+  .metrics--4-cols .metrics__item:nth-child(4n) {
+    padding-right: 0;
+  }
+}
+@media (width <= 63.99875rem) {
+  .metrics--4-cols {
+    --columns: 2;
+    padding-inline: 0;
+  }
+  .metrics--4-cols .metrics__item {
+    border-bottom: var(--border);
+  }
+  .metrics--4-cols .metrics__item:nth-child(odd) {
+    padding-left: var(--container-padding-x);
+  }
+  .metrics--4-cols .metrics__item:nth-child(even) {
+    padding-right: var(--container-padding-x);
+    border-right: none;
+  }
 }
 .metrics__list {
   display: grid;
