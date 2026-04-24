@@ -24,6 +24,16 @@
     @include mobile {
       padding-block: rem(14);
     }
+
+    @include mobile-s {
+      font-size: rem(12);
+    }
+  }
+
+  &__promo-link {
+    .icon {
+      column-gap: rem(5);
+    }
   }
 
   &__body {
